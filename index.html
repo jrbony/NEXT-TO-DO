@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Next To-Do</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Next <span>To-Do</span></a>
+    <nav>
+      <a href="login.html" data-i18n="login">Login</a>
+      <a class="btn small" href="signup.html" data-i18n="getStarted">Get started</a>
+      <select id="languageSelect" aria-label="Language">
+        <option value="en">English</option>
+        <option value="bn">বাংলা</option>
+      </select>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div>
+      <p class="eyebrow">PLAN TODAY · IMPROVE TOMORROW</p>
+      <h1>Your next three days,<br><span>with a clear plan.</span></h1>
+      <p class="lead">Plan meaningful tasks, track your progress and build a routine that works for you.</p>
+      <div class="actions">
+        <a class="btn" href="signup.html" data-i18n="createAccount">Create account</a>
+        <a class="btn secondary" href="login.html" data-i18n="signIn">Sign in</a>
+      </div>
+      <p class="muted">A positive space for steady progress. Your private tasks stay private.</p>
+    </div>
+
+    <div class="hero-card">
+      <div class="card-head">
+        <span>Today</span>
+        <span class="pill">Your plan</span>
+      </div>
+      <h3>Small steps add up.</h3>
+      <div class="demo-task">✓ <span>Review lecture notes</span></div>
+      <div class="demo-task">○ <span>Practice a new skill</span></div>
+      <div class="demo-task">○ <span>Read for 20 minutes</span></div>
+      <div class="progress">
+        <span style="width: 33%"></span>
+      </div>
+      <small>Example progress preview</small>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Next To-Do · Make progress at your own pace.
+  </footer>
+
+  <script type="module" src="js/language.js"></script>
+</body>
+</html>

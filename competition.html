@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Competition | Next To-Do</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="dashboard.html">Next <span>To-Do</span></a>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">Profile</a>
+      <a href="stories.html">Stories</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h1>Progress in your group</h1>
+      <p class="muted">
+        This starter shows only opted-in public display names and group-level completion averages. It is not a high-stakes ranking.
+      </p>
+      <div id="leaderboard">
+        <p class="muted">Loading group progress…</p>
+      </div>
+      <p id="message" class="form-message" role="status"></p>
+    </section>
+  </main>
+
+  <script type="module" src="js/competition.js"></script>
+  <script type="module" src="js/language.js"></script>
+</body>
+</html>

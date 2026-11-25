@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile | Next To-Do</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="dashboard.html">Next <span>To-Do</span></a>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="routine.html">Routines</a>
+      <a href="stories.html">Stories</a>
+      <a href="competition.html">Competition</a>
+    </nav>
+  </header>
+
+  <main class="container narrow">
+    <section class="panel">
+      <h1>Your profile</h1>
+      <form id="profileForm">
+        <label>
+          Display name
+          <input id="fullName" maxlength="60" required>
+        </label>
+
+        <label>
+          Age
+          <input id="age" type="number" min="5" max="100" inputmode="numeric">
+        </label>
+
+        <label>
+          Group
+          <select id="category">
+            <option value="school_3_5">School · Class 3–5</option>
+            <option value="school_6_8">School · Class 6–8</option>
+            <option value="school_9_10">School · Class 9–10</option>
+            <option value="college">College</option>
+            <option value="admission">Admission preparation</option>
+            <option value="university_year_1">University · 1st year</option>
+            <option value="university_year_2">University · 2nd year</option>
+            <option value="university_year_3">University · 3rd year</option>
+            <option value="university_year_4">University · 4th year</option>
+            <option value="job_prep">Job preparation</option>
+            <option value="professional">Working professional</option>
+            <option value="senior">Senior citizen</option>
+          </select>
+        </label>
+
+        <label>
+          Preferred language
+          <select id="language">
+            <option value="en">English</option>
+            <option value="bn">বাংলা</option>
+          </select>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" id="showLb" checked> Show my name in my group progress list
+        </label>
+
+        <label>
+          Short bio (optional)
+          <textarea id="bio" maxlength="180"></textarea>
+        </label>
+
+        <img id="avatarPreview" class="avatar" alt="" hidden>
+
+        <label>
+          Profile picture
+          <input id="avatar" type="file" accept="image/png, image/jpeg, image/webp">
+        </label>
+
+        <button class="btn">Save profile</button>
+        <p id="message" class="form-message" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <script type="module" src="js/profile.js"></script>
+  <script type="module" src="js/language.js"></script>
+</body>
+</html>

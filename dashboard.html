@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | Next To-Do</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="dashboard.html">Next <span>To-Do</span></a>
+    <nav>
+      <a href="profile.html">Profile</a>
+      <a href="routine.html">Routines</a>
+      <a href="stories.html">Stories</a>
+      <a href="competition.html">Competition</a>
+      <button id="logoutBtn" class="btn small secondary">Logout</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="page-title">
+      <div>
+        <p class="eyebrow">YOUR SPACE</p>
+        <h1 id="welcome">Dashboard</h1>
+        <p class="muted">Plan the next three days, one step at a time.</p>
+      </div>
+      <label class="inline-label">
+        Language 
+        <select id="languageSelect">
+          <option value="en">English</option>
+          <option value="bn">বাংলা</option>
+        </select>
+      </label>
+    </div>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <span>Today's completion</span>
+        <strong id="todayPercent">—%</strong>
+      </article>
+      <article class="stat-card">
+        <span>Tasks today</span>
+        <strong id="todayCount">0 / 0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Group</span>
+        <strong id="userGroup">—</strong>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h2>Next 3 days</h2>
+          <p class="muted">You can plan tasks for today and the following two days.</p>
+        </div>
+      </div>
+      <form id="taskForm" class="task-form">
+        <input id="taskTitle" maxlength="120" placeholder="What do you want to do?" required>
+        <input id="taskDate" type="date" required>
+        <button class="btn">Add task</button>
+      </form>
+      <div id="taskList" class="task-list"></div>
+      <p id="taskMessage" class="form-message" role="status"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Recent progress</h2>
+      <div id="progressList" class="progress-list"></div>
+      <p class="muted tiny">
+        Daily percentages are calculated from tasks saved for that date. A day with no tasks is shown as “No plan”, not 0%.
+      </p>
+    </section>
+  </main>
+
+  <script type="module" src="js/dashboard.js"></script>
+  <script type="module" src="js/language.js"></script>
+</body>
+</html>

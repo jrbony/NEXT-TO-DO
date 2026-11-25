@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create account | Next To-Do</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+  <main class="auth-wrap">
+    <a class="brand" href="index.html">Next <span>To-Do</span></a>
+    <section class="auth-card">
+      <h1>Create your account</h1>
+      <p class="muted">Start with a simple plan.</p>
+      <form id="signupForm">
+        <label>
+          Display name
+          <input id="fullName" maxlength="60" required>
+        </label>
+
+        <label>
+          Email
+          <input type="email" id="email" autocomplete="email" required>
+        </label>
+
+        <label>
+          Password
+          <input type="password" id="password" minlength="8" autocomplete="new-password" required>
+          <small>Use at least 8 characters.</small>
+        </label>
+
+        <label>
+          Confirm password
+          <input type="password" id="confirmPassword" minlength="8" required>
+        </label>
+
+        <label>
+          Age
+          <input id="age" type="number" min="5" max="100" inputmode="numeric" required>
+          <small>Your age stays private and is never shown to other users.</small>
+        </label>
+
+        <label>
+          Your group
+          <select id="category" required>
+            <option value="">Choose a group</option>
+            <option value="school_3_5">School · Class 3–5</option>
+            <option value="school_6_8">School · Class 6–8</option>
+            <option value="school_9_10">School · Class 9–10</option>
+            <option value="college">College</option>
+            <option value="admission">Admission preparation</option>
+            <option value="university_year_1">University · 1st year</option>
+            <option value="university_year_2">University · 2nd year</option>
+            <option value="university_year_3">University · 3rd year</option>
+            <option value="university_year_4">University · 4th year</option>
+            <option value="job_prep">Job preparation</option>
+            <option value="professional">Working professional</option>
+            <option value="senior">Senior citizen</option>
+          </select>
+        </label>
+
+        <label>
+          Language
+          <select id="language">
+            <option value="en">English</option>
+            <option value="bn">বাংলা</option>
+          </select>
+        </label>
+
+        <button class="btn full" type="submit">Create account</button>
+        <p id="message" class="form-message" role="status"></p>
+      </form>
+
+      <p class="muted tiny">
+        Use a parent/guardian's help where required. Do not add school, address, phone or other sensitive details to a public profile.
+      </p>
+
+      <div class="auth-links">
+        <span>Already registered? <a href="login.html">Sign in</a></span>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/signup.js"></script>
+  <script type="module" src="js/language.js"></script>
+</body>
+</html>

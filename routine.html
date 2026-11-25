@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Routines | Next To-Do</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="dashboard.html">Next <span>To-Do</span></a>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">Profile</a>
+      <a href="stories.html">Stories</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h1>My routine</h1>
+      <p class="muted">
+        Create a routine and choose whether to share it publicly. Public routines must never contain private contact, school, address or schedule-location details.
+      </p>
+      <form id="routineForm">
+        <label>
+          Routine title
+          <input id="title" maxlength="80" required>
+        </label>
+        <label>
+          Routine details
+          <textarea id="details" maxlength="1500" required placeholder="Example: Morning reading; afternoon revision..."></textarea>
+        </label>
+        <label class="check">
+          <input type="checkbox" id="isPublic"> Make this routine public
+        </label>
+        <button class="btn">Save routine</button>
+        <p id="message" class="form-message" role="status"></p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>My routines and public routines</h2>
+      <div id="publicRoutines"></div>
+    </section>
+  </main>
+
+  <script type="module" src="js/routine.js"></script>
+  <script type="module" src="js/language.js"></script>
+</body>
+</html>
