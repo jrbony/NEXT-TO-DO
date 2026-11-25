@@ -10,20 +10,41 @@ const welcome = document.querySelector('#welcome');
 const taskList = document.querySelector('#taskList');
 const msg = document.querySelector('#taskMessage');
 
-const { data: profile } = await supabase
+let { data: profile } = await supabase
   .from('profiles')
   .select('full_name, category, preferred_language')
   .eq('id', user.id)
   .maybeSingle();
 
+// যদি profiles টেবিলে নাম না থাকে বা 'New user' থাকে, তবে সাইনআপের মেটাডাটা থেকে নাম নেবে
+const metaName = user.user_metadata?.full_name?.trim();
+const displayName =
+  (profile?.full_name && profile.full_name !== 'New user' ? profile.full_name : metaName) ||
+  user.email?.split('@')[0] ||
+  'User';
+
+// ডাটাবেজে প্রোফাইল না থাকলে অটোমেটিক তৈরি/আপডেট করে নেবে
+if (!profile || (!profile.full_name && metaName)) {
+  await supabase.from('profiles').upsert({
+    id: user.id,
+    full_name: displayName,
+    category: profile?.category || user.user_metadata?.category || 'school_3_5',
+    preferred_language: profile?.preferred_language || user.user_metadata?.preferred_language || 'en',
+  });
+}
+
 setLang(profile?.preferred_language || getLang());
-welcome.textContent = `${getLang() === 'bn' ? 'স্বাগতম' : 'Welcome'}, ${profile?.full_name || ''}`;
-document.querySelector('#userGroup').textContent = catLabel(profile?.category);
+welcome.textContent = `${getLang() === 'bn' ? 'স্বাগতম' : 'Welcome'}, ${displayName}`;
+document.querySelector('#userGroup').textContent = catLabel(
+  profile?.category || user.user_metadata?.category
+);
 
 const lang = document.querySelector('#languageSelect');
 lang.value = getLang();
 
 lang.addEventListener('change', async () => {
+  setLang(lang.value);
+  welcome.textContent = `${getLang() === 'bn' ? 'স্বাগতম' : 'Welcome'}, ${displayName}`;
   await supabase
     .from('profiles')
     .update({ preferred_language: lang.value })
