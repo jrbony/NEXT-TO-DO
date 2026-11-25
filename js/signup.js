@@ -1,18 +1,29 @@
 import { supabase, showMessage } from './supabase.js';
 
-const form = document.querySelector('#signupForm');
+const form = document.querySelector('#signupForm') || document.querySelector('form');
 const msg = document.querySelector('#message');
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  const full_name = document.querySelector('#fullName').value.trim();
+  // ইনপুট বক্সের ID যাই হোক না কেন, সঠিকভাবে নাম খুঁজে নেবে
+  const nameInput =
+    document.querySelector('#fullName') ||
+    document.querySelector('#full_name') ||
+    document.querySelector('#name') ||
+    document.querySelector('input[type="text"]');
+
+  const full_name = nameInput ? nameInput.value.trim() : '';
   const email = document.querySelector('#email').value.trim();
   const password = document.querySelector('#password').value;
   const confirm = document.querySelector('#confirmPassword').value;
   const age = parseInt(document.querySelector('#age').value, 10);
   const category = document.querySelector('#category').value;
   const language = document.querySelector('#language').value;
+
+  if (!full_name) {
+    return showMessage(msg, 'Please enter your display name.', true);
+  }
 
   if (password !== confirm) {
     return showMessage(msg, 'Passwords do not match.', true);
