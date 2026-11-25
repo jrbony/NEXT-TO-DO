@@ -1,0 +1,78 @@
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.stat-card {
+  display: grid;
+  gap: 8px;
+}
+
+.stat-card span {
+  color: #69758b;
+  font-size: 14px;
+}
+
+.stat-card strong {
+  font-size: 30px;
+}
+
+.task-form {
+  display: grid;
+  grid-template-columns: 1fr 190px auto;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.task-list {
+  display: grid;
+  gap: 10px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px;
+  border: 1px solid #e6eaf2;
+  border-radius: 10px;
+}
+
+.task-item input {
+  width: auto;
+}
+
+.task-item .task-name {
+  flex: 1;
+}
+
+.task-item.done .task-name {
+  text-decoration: line-through;
+  color: #8490a4;
+}
+
+.task-item button {
+  border: 0;
+  background: #fff;
+  color: #bd3b50;
+  cursor: pointer;
+}
+
+.progress-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 55px;
+  gap: 12px;
+  align-items: center;
+  margin: 14px 0;
+}
+
+.progress-row .progress {
+  margin: 0;
+}
+
+.progress-row strong {
+  text-align: right;
+  font-size: 14px;
+}
